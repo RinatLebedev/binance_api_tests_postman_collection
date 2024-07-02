@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "43ee09c5-8a02-4c65-9767-3c8b17d6b1f4",
+		"name": "Binance Api Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35997156"
+	},
+	"item": [
+		{
+			"name": "Test connectivity (TC 1)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://testnet.binance.vision/api/v3/ping"
+			},
+			"response": []
+		},
+		{
+			"name": "Check server time (TC2)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://testnet.binance.vision/api/v3/time"
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange information (TC3)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://testnet.binance.vision/api/v3/exchangeInfo?symbol=BTCUSDT",
+					"protocol": "https",
+					"host": [
+						"testnet",
+						"binance",
+						"vision"
+					],
+					"path": [
+						"api",
+						"v3",
+						"exchangeInfo"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "BTCUSDT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24hr ticker price change statistics (TC4)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testnet.binance.vision/api/v3/ticker/24hr?symbol=DOGEUSDT",
+					"protocol": "https",
+					"host": [
+						"testnet",
+						"binance",
+						"vision"
+					],
+					"path": [
+						"api",
+						"v3",
+						"ticker",
+						"24hr"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "DOGEUSDT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Symbol price ticker (TC5)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testnet.binance.vision/api/v3/ticker/price?symbol=ETHUSDT",
+					"protocol": "https",
+					"host": [
+						"testnet",
+						"binance",
+						"vision"
+					],
+					"path": [
+						"api",
+						"v3",
+						"ticker",
+						"price"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "ETHUSDT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kline/Candlestick data (TC6)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testnet.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=5",
+					"protocol": "https",
+					"host": [
+						"testnet",
+						"binance",
+						"vision"
+					],
+					"path": [
+						"api",
+						"v3",
+						"klines"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "interval",
+							"value": "1h"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"addTokenTo": "header"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
